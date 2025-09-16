@@ -1,39 +1,42 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFlags } from "../../redux/countriesSlice";
 import Country from "../../components/Country";
+import SearchBar from "../../components/SearchBar";
 import "./countries.css";
 
 const Countries = () => {
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchFlags());
   }, [dispatch]);
-
+  
   const allCountries = useSelector((store) => store.countries.allCountries);
+  const regions = ['All', 'Europe', 'Americas', 'Asia', 'Oceania', 'Africa']
+  const [selectedRegion, setSelectedRegion] = useState('All')
+  const [isOpen, setIsOpen] = useState(false)
 
-  console.log(allCountries);
-
+  const handleRegionChange = (region) => {
+    setSelectedRegion(region)
+    setIsOpen(false)
+  }
   return (
     <div className="site-wrapper">
       <h1>Browse Countries</h1>
       <div className="filters">
-        <div className="input-container">
-          <input className="country-search" placeholder="Search Country..." type="text" name="" id="" />
-          <div className="dropdown"></div>
-        </div>
+        <SearchBar countries={allCountries}/>
         <div className="select-container">
-          <h2>Select Region:</h2>
-          <select name="region" id="">
-            <option selected value="all">
-              All
-            </option>
-            <option value="europe">Europe</option>
-            <option value="americas">Americas</option>
-            <option value="asia">Asia</option>
-            <option value="oceania">Oceania</option>
-            <option value="Africa">Africa</option>
-          </select>
+          <h2 className="select-text">Select Region:</h2>
+          <div className="dropdown">
+            <div onClick={()=>setIsOpen(!isOpen)} className="select">{selectedRegion} <img className={!isOpen ? "arrow" : "arrow-open" } src="src\assets\chevron-down-svgrepo-com.svg" alt="" /></div>
+            <div className="options">
+            {regions.map((region, i)=>(
+              isOpen && <div key={i} onClick={()=>handleRegionChange(region)} className="region-option">{region}</div>
+            ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="countries-container">

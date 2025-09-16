@@ -1,8 +1,16 @@
 .select-container {
     display: flex;
-    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    
+    
 }
-
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 25px;
+}
 .country {
     width: 100%;
     background-color: #37474F;
@@ -14,7 +22,9 @@
         object-fit: cover;
     }
 }
-
+.select-text {
+    font-size: 18px
+}
 .country-info {
     height: 113px;
     padding: 20px;
@@ -22,12 +32,106 @@
 .countries-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
     margin-top: 50px;
-    margin: 0 auto;
+    margin: 50px auto;
+    
 }
+
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    background: #37474F;
+    position: relative;
+    border-radius: 4px;
+}
+.select {
+    width: 130px;
+    padding: 10px 15px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    position: absolute; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.153);
+
+    top: 100%; 
+    left: 0;  
+    width: 100%; 
+    z-index: 10; 
+    overflow: hidden;
+    border-radius: 8px ;
+    margin-top: 5px;
+
+}
+.region-option {
+    width: 130px;
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #37474F;
+    
+
+}
+
+.region-option:hover {
+    background-color: #506670;;
+}
+
+.arrow {
+    height: 15px;
+    transition: all 100ms ;
+}
+
+.arrow-open {
+    transform: rotate(180deg);
+    height: 15px;
+    transition: all 200ms ;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.country-search {
+    border: none;
+    background-color: #37474F;
+    color: white;
+    padding: 10px;
+}
+
+.country-search:focus {
+    outline: none;
+}
+
+
+
+
+
+
+
+
 @media (min-width: 720px) {
     .country {
         width: 340px;
     }
+     .filters {
+        justify-content: space-between;
+    }
+    .select-container {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 911px) {
+    .filters {
+        flex-direction: row;
+         justify-content: none;
+    }
+
 }
