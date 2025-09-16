@@ -4,7 +4,7 @@ const Country = ({country}) => {
         <div className="country-info">
             <h3>{country.name}</h3>
             <p>Capital: {country.capital}</p>
-            <p>Population: {country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+            <p>Populations: {country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
         </div>
     </div> );
 }
