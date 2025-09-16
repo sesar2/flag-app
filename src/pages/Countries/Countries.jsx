@@ -8,9 +8,10 @@ import "./countries.css";
 const Countries = () => {
 
   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dispatch(fetchFlags());
+    dispatch(fetchFlags()).finally(() => setLoading(false));
   }, [dispatch]);
   
   const allCountries = useSelector((store) => store.countries.allCountries);
@@ -23,7 +24,7 @@ const Countries = () => {
     setIsOpen(false)
   }
   return (
-    <div className="site-wrapper">
+    <>
       <h1>Browse Countries</h1>
       <div className="filters">
         <SearchBar countries={allCountries}/>
@@ -40,11 +41,12 @@ const Countries = () => {
         </div>
       </div>
       <div className="countries-container">
-        {allCountries.map((country, i) => (
+        {allCountries.filter((country) => country.region === selectedRegion || selectedRegion === 'All')
+        .map((country, i) => (
           <Country key={i} country={country} />
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

@@ -14,7 +14,11 @@
 .country {
     width: 100%;
     background-color: #37474F;
+    display: flex;
+    flex-direction: column;
     border-radius: 0 0 9px 9px;
+    cursor: pointer;
+    transition: 100ms all;
 
     img{
         width: 100%;
@@ -22,13 +26,14 @@
         object-fit: cover;
     }
 }
+
+.country:hover {
+    transform: scale(1.05);
+}
 .select-text {
     font-size: 18px
 }
-.country-info {
-    height: 113px;
-    padding: 20px;
-}
+
 .countries-container {
     display: flex;
     flex-wrap: wrap;
@@ -37,7 +42,26 @@
     margin: 50px auto;
     
 }
+.country-card {
+    display: flex;
+    flex-direction: column;
 
+    h3 {
+        padding: 5px 15px;
+        background-color: #506670;
+    }
+}
+
+.country-info {
+    color: rgb(214, 214, 214);
+    padding: 15px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
 .dropdown {
     display: flex;

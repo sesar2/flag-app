@@ -29,7 +29,7 @@ const SearchBar = ({ countries }) => {
               <Link
                 key={i}
                 style={{ textDecoration: "none" }}
-                to={`/${country.name}`}
+                to={`/country/${country.name}`}
               >
                 <div className="search-result-item">
                   <img
