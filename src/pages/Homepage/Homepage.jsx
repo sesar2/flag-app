@@ -3,7 +3,7 @@ import "./Homepage.css";
 
 const Homepage = () => {
   return (
-    <div className="site-wrapper">
+    
       <div className="homepage-container">
         <h1>Flag App</h1>
         <div className="btn-container">
@@ -23,7 +23,7 @@ const Homepage = () => {
           </Link>
         </div>
       </div>
-    </div>
+ 
   );
 };
 

@@ -30,6 +30,7 @@ const SearchBar = ({ countries }) => {
                 key={i}
                 style={{ textDecoration: "none" }}
                 to={`/country/${country.name}`}
+                state={{ from: `/countries` }}
               >
                 <div className="search-result-item">
                   <img

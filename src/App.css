@@ -5,5 +5,7 @@ body {
 
 button {
   background-color: #37474F;
+  border: none;
+  color: #fff;
 }
 

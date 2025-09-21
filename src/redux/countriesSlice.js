@@ -40,10 +40,15 @@ const countriesSlice = createSlice({
   initialState: {
     allCountries: [],
     singleCountry: {},
+    collection: localStorage.getItem("collection") ? JSON.parse(localStorage.getItem("collection")) : [],
     status: "idle",
     error: null,
   },
-  reducers: {},
+  reducers: {
+    addToCollection: (state, action) => {
+      state.collection = [...state.collection, action.payload];
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchFlags.pending, (state) => {
@@ -71,4 +76,5 @@ const countriesSlice = createSlice({
   },
 });
 
+export const { addToCollection } = countriesSlice.actions;
 export default countriesSlice.reducer;

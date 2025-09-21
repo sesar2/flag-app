@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchFlags } from "../../redux/countriesSlice";
 import Country from "../../components/Country";
 import SearchBar from "../../components/SearchBar";
+import BackButton from "../../components/BackButton";
 import "./countries.css";
 
 const Countries = () => {
@@ -34,7 +35,7 @@ const Countries = () => {
             <div onClick={()=>setIsOpen(!isOpen)} className="select">{selectedRegion} <img className={!isOpen ? "arrow" : "arrow-open" } src="src\assets\chevron-down-svgrepo-com.svg" alt="" /></div>
             <div className="options">
             {regions.map((region, i)=>(
-              isOpen && <div key={i} onClick={()=>handleRegionChange(region)} className="region-option">{region}</div>
+              isOpen && <div key={i} onClick={()=>handleRegionChange(region)} className={selectedRegion === region ? "region-option active" : "region-option"}>{region}</div>
             ))}
             </div>
           </div>

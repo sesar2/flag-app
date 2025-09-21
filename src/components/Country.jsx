@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Country = ({country}) => {
-    return ( <Link to={`/country/${country.name}`} className="country">
+    return ( <Link to={`/country/${country.name}`} className="country" state={{ from: `/countries` }}>
         <img className="country-img" src={country.flagUrl} alt="" />
         <div className="country-card">
             <h3>{country.name}</h3>

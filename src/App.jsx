@@ -6,15 +6,20 @@ import { Route, Routes } from 'react-router-dom'
 import Homepage from './pages/Homepage/Homepage'
 import CountryPage from './pages/CountryPage/CountryPage'
 import Countries from './pages/Countries/Countries'
+import CollectionPage from './pages/CollectionPage/CollectionPage'
+import BackButton from './components/BackButton'
 
 function App() {
 
   return (
     <div className="site-wrapper"> 
+    <BackButton defaultUrl='/'/>
       <Routes>
         <Route path='/' element={<Homepage/>}/>
         <Route path='/countries' element={<Countries/>}/>
         <Route path='/country/:name' element={<CountryPage/>}/>
+        <Route path='/collection' element={<CollectionPage/>}/>
+
       </Routes>
     </div>
   )
