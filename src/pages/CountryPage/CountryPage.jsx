@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import {
   fetchSingleCountry,
   addToCollection,
+  removeFromCollection,
 } from "../../redux/countriesSlice";
 import { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
@@ -13,6 +14,7 @@ const CountryPage = () => {
   const dispatch = useDispatch();
   const country = useSelector((state) => state.countries.singleCountry);
   const collection = useSelector((state) => state.countries.collection);
+  const [isInCollection, setIsInCollection] = useState(false)
   console.log(collection);
   const languageNames = country.languages
     ? Object.values(country.languages)
@@ -27,15 +29,21 @@ const CountryPage = () => {
     }
   }, [dispatch, name]);
 
+useEffect(() => {
+  setIsInCollection(collection.some((c) => c.name === country.name));
+}, [collection, country.name]);
+
+
+
   const handleAddToCollection = () => {
-    if (!collection.find((c) => c.name === country.name)) {
-      dispatch(addToCollection(country));
-      localStorage.setItem(
-        "collection",
-        JSON.stringify([...collection, country])
-      );
-    }
-  };
+  if (isInCollection) {
+    dispatch(removeFromCollection(country.name));
+    alert('Country Removed from collection');
+  } else {
+    dispatch(addToCollection(country));
+    alert('Country Added to collection');
+  }
+};
 
   return (
     <div className="country-page">
@@ -87,7 +95,7 @@ const CountryPage = () => {
         </div>
         <div className="button-container">
           <button onClick={handleAddToCollection} className="add-button">
-            Add to Collection
+            {!isInCollection ? 'Add to Collection' : 'Remove from Collection'}
           </button>
           Or
           <Link

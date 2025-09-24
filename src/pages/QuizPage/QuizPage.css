@@ -1,0 +1,30 @@
+.option-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+.quiz-option {
+    font-size: 16px;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+.quiz-option:hover{
+    background-color: #506670;
+}
+.quiz-flag {
+    width: 100%;
+    height: auto;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.quiz-page {
+    text-align: center;
+}

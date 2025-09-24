@@ -1,0 +1,46 @@
+.input-container-quiz {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.select-difficulty-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+
+}
+
+.region-option {
+    width: 100%;
+}
+
+.select {
+    padding: 10px;
+}
+
+.options {
+    text-align: start;
+}
+.start-quiz-btn {
+    background-color: #37474f;
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}

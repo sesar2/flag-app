@@ -42,3 +42,6 @@ a {
 .back-button:hover {
   background-color: #263238;
 }
+.btn-container {
+  max-width: 550px;
+}

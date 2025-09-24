@@ -8,8 +8,12 @@ import CountryPage from './pages/CountryPage/CountryPage'
 import Countries from './pages/Countries/Countries'
 import CollectionPage from './pages/CollectionPage/CollectionPage'
 import BackButton from './components/BackButton'
+import SelectDifficultyPage from './pages/SelectDifficultyPage/SelectDifficultyPage'
+import { useSelector } from 'react-redux'
+import QuizPage from './pages/QuizPage/QuizPage'
 
 function App() {
+  const quizStarted = useSelector((state) => state.quiz.quizStarted);
 
   return (
     <div className="site-wrapper"> 
@@ -19,7 +23,8 @@ function App() {
         <Route path='/countries' element={<Countries/>}/>
         <Route path='/country/:name' element={<CountryPage/>}/>
         <Route path='/collection' element={<CollectionPage/>}/>
-
+        <Route path='/quiz' element={!quizStarted ? <SelectDifficultyPage/> : <QuizPage/>}/>
+        <Route path='*' element={<h1>404 Not Found</h1>}/>
       </Routes>
     </div>
   )

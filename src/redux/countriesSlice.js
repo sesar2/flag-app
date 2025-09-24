@@ -47,7 +47,11 @@ const countriesSlice = createSlice({
   reducers: {
     addToCollection: (state, action) => {
       state.collection = [...state.collection, action.payload];
-    }
+    },
+    removeFromCollection : (state, action) => {
+  state.collection = state.collection.filter(
+    (c) => c.name !== action.payload
+  );    }
   },
   extraReducers: (builder) => {
     builder
@@ -76,5 +80,5 @@ const countriesSlice = createSlice({
   },
 });
 
-export const { addToCollection } = countriesSlice.actions;
+export const { addToCollection, removeFromCollection } = countriesSlice.actions;
 export default countriesSlice.reducer;

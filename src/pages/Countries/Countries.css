@@ -36,13 +36,17 @@
     font-size: 18px
 }
 
-.countries-container {
+.countries-wrapper {
     display: flex;
+    justify-content: center; /* center the container itself */
+    width: 100%;
+}
+
+.countries-container {
+    display: inline-flex; /* shrink-wrap to content */
     flex-wrap: wrap;
     gap: 30px;
     margin-top: 50px;
-    margin: 50px auto;
-    
 }
 .country-card {
     display: flex;
