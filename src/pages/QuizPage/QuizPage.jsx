@@ -72,7 +72,6 @@ const QuizPage = () => {
   return questionIndex < 16 ? (
     <div className="quiz-page">
       <div className="quiz-header">
-        <h2>{score}</h2>
         <h2>{questionIndex}/15</h2>
         <h1>Which country is this?</h1>
       </div>

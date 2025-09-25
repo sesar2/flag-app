@@ -18,7 +18,7 @@ const Homepage = () => {
           <Link to="/quiz" className="quiz link">
             Country Quiz
           </Link>
-          <Link to="/leaderboard" className="leaderboard link">
+          <Link to="/leaderboard" className="leaderboard-btn link">
             Leaderboard
           </Link>
         </div>

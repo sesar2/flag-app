@@ -1,0 +1,80 @@
+.leaderboardpage {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.leaderboard-container {
+  background-color: #37474f;
+  padding: 20px;
+  border-radius: 20px;
+  min-width: 240px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.leaderboard-container:hover {
+  transform: translateY(-5px);
+}
+
+.leaderboard-container h1 {
+  font-size: 1.4rem;
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #546e7a;
+  padding-bottom: 5px;
+}
+
+.difficulty-leaderboard {
+  margin-bottom: 20px;
+}
+
+.difficulty-leaderboard h1 {
+  font-size: 1.1rem;
+  color: #ffcc80;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.leaderboard {
+  background: #263238;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
+.high-score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700; /* gold for first place */
+  margin-bottom: 10px;
+}
+
+.leaderboard h3 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  padding: 4px 0;
+}
+
+.leaderboard h3:nth-of-type(1) {
+  color: #c0c0c0; /* silver for second place */
+}
+
+.leaderboard h3:nth-of-type(2) {
+  color: #cd7f32; /* bronze for third place */
+}
+
+/* Add hover effects for scores */
+.leaderboard h2,
+.leaderboard h3 {
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.leaderboard h2:hover,
+.leaderboard h3:hover {
+  transform: scale(1.05);
+  color: #fff;
+}

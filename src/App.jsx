@@ -11,6 +11,7 @@ import BackButton from './components/BackButton'
 import SelectDifficultyPage from './pages/SelectDifficultyPage/SelectDifficultyPage'
 import { useSelector } from 'react-redux'
 import QuizPage from './pages/QuizPage/QuizPage'
+import LeaderBoardPage from './pages/LeaderboardPage/LeaderBoardPage'
 
 function App() {
   const quizStarted = useSelector((state) => state.quiz.quizStarted);
@@ -24,6 +25,7 @@ function App() {
         <Route path='/country/:name' element={<CountryPage/>}/>
         <Route path='/collection' element={<CollectionPage/>}/>
         <Route path='/quiz' element={!quizStarted ? <SelectDifficultyPage/> : <QuizPage/>}/>
+        <Route path='/leaderboard' element={<LeaderBoardPage/>}/>
         <Route path='*' element={<h1>404 Not Found</h1>}/>
       </Routes>
     </div>

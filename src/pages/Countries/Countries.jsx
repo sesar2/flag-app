@@ -43,6 +43,7 @@ const Countries = () => {
       </div>
       <div className="countries-wrapper">
         <div className="countries-container">
+          {loading && <h1>loading</h1>}
           {allCountries
             .filter(
               (country) =>
