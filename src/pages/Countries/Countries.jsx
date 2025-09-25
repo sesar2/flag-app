@@ -4,6 +4,7 @@ import { fetchFlags } from "../../redux/countriesSlice";
 import Country from "../../components/Country";
 import SearchBar from "../../components/SearchBar";
 import BackButton from "../../components/BackButton";
+import { Skeleton } from "@mui/material";
 import "./countries.css";
 import Dropdown from "../../components/Dropdown";
 
@@ -43,7 +44,10 @@ const Countries = () => {
       </div>
       <div className="countries-wrapper">
         <div className="countries-container">
-          {loading && <h1>loading</h1>}
+          {loading &&
+            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
+              <Skeleton variant="rectangular" width={340} height={350}  sx={{bgcolor: 'grey.900'}}/>
+            ))}
           {allCountries
             .filter(
               (country) =>

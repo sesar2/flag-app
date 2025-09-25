@@ -76,7 +76,7 @@ const QuizPage = () => {
         <h1>Which country is this?</h1>
       </div>
       <div className="quiz-container">
-        <img src={randomCountry.flagUrl} alt="" className="quiz-flag" />
+        <img style={{width:'470px'}} src={randomCountry.flagUrl} alt="" className="quiz-flag" />
         {difficulty !== "Hard" ? (
           <div className="option-container">
             {randomOptions.map((option, i) => (
